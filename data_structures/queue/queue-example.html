@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Queue Test</title>
+	<script type="text/javascript" src="queue.js"> </script>
+	<script type="text/javascript">
+		
+		//Updates the HTML to reflect changes in Queue
+		function Update()
+		{
+			document.getElementById("output").innerHTML="My Queue:" + myQ.print();
+			document.getElementById("length").innerHTML="My Queue Size:" + myQ.size;
+		}
+
+		//Self-Explanatory
+		function ConvertToInt(string)
+		{
+			var number=parseInt(string);
+			return number;
+		}
+	</script>
+</head>
+<body>
+<form name="form">
+<input type="text" name="number" autocomplete="off">
+<input type="submit" name="submit" value="Push" onclick="myQ.push(ConvertToInt(form.number.value)); Update(); return false">
+<input type="button" name="pop" value="Pop" onclick="myQ.pop(); Update();">
+</form>
+
+<p id="output"></p>
+<p id="length"></p>
+
+<script>Update();</script>
+</body>
+</html>
