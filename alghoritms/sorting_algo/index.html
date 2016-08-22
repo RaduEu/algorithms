@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<script src="quick-sort.js"></script>
+<script>
+function stuff(form)
+{
+	var str = form.inp.value;
+	var len = 0;
+	var arr = [];
+	var nr = 0;
+	for(var i = 0; i <= str.length; i++)
+	{
+		if(str[i]==','|| i==str.length) 
+		{
+			arr[len] = nr;
+			nr = 0;
+			len++;
+		}
+		else 
+		{
+			nr = nr * 10 + parseInt(str[i]);
+		}
+		
+	}
+	Sort(arr);
+	return false;
+}
+</script>
+</head>
+<body>
+<form>
+Enter array:
+<input type="text" name="inp" autocomplete="off" value="">	
+<input type="submit" name="submit" value="Submit" 
+	onclick="document.getElementById('vulnerable').innerHTML = inp.value;
+ 	stuff(this.form); return false";>
+</form>
+
+
+<p id="sorted"> </p>
+<br>
+<p id="vulnerable"></p>
+
+</body>
+</html>
