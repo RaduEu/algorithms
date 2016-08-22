@@ -1,1 +1,1 @@
-#algorithms
+# Algoritmi de sortare
